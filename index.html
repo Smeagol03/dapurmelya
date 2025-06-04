@@ -1,0 +1,874 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Tokoku - Warung Rasa Nikmat">
+    <meta property="og:description"
+        content="Nikmati masakan rumahan khas Indonesia yang lezat, murah, dan bikin nagih!">
+    <meta property="og:image" content="https://tokoizza.netlify.app/image/banner.jpg">
+    <meta property="og:url" content="https://tokoizza.netlify.app">
+
+    <title>Melya</title>
+    <link rel="icon" href="image/shopping-cart.png">
+    <!-- TailwindCss -->
+    <link rel="stylesheet" href="./src/output.css">
+    <!-- CustomCss -->
+    <link rel="stylesheet" href="./style.css">
+    <!-- FlowBite -->
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    <!-- Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="bg-white dark:bg-gray-900 fixed w-full z-100 top-0 start-0">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="#" class="flex items-center">
+                <img src="./image/logo.jpg" alt="logo" class="h-10 mr-3">
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Melya</span>
+            </a>
+            <div class="flex md:order-2 items-center">
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden text-gray-800 dark:text-gray-200 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
+                <ul
+                    class="flex flex-col p-4 md:p-0 mt-4 font-medium rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                    <li>
+                        <a href="#hero"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-yellow-600 md:p-0 dark:text-white md:dark:hover:text-yellow-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Home</a>
+                    </li>
+                    <li>
+                        <a href="#about"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-yellow-600 md:p-0 dark:text-white md:dark:hover:text-yellow-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+                    </li>
+                    <!-- <li>
+                        <a href="#menu"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-yellow-600 md:p-0 dark:text-white md:dark:hover:text-yellow-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Menu</a>
+                    </li> -->
+                    <li>
+                        <a href="#komentar"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-yellow-600 md:p-0 dark:text-white md:dark:hover:text-yellow-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Testimoni</a>
+                    </li>
+                    <li>
+                        <a href="#gallery"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-yellow-600 md:p-0 dark:text-white md:dark:hover:text-yellow-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Galeri</a>
+                    </li>
+                    <li>
+                        <a href="#booking"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-yellow-600 md:p-0 dark:text-white md:dark:hover:text-yellow-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Pemesanan</a>
+                    </li>
+                    <li>
+                        <a href="#footer"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-yellow-600 md:p-0 dark:text-white md:dark:hover:text-yellow-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#hero"
+                class="block py-2 px-4 text-gray-800 dark:text-gray-200 hover:bg-yellow-100 dark:hover:bg-gray-700">Home</a>
+            <a href="#about"
+                class="block py-2 px-4 text-gray-800 dark:text-gray-200 hover:bg-yellow-100 dark:hover:bg-gray-700">About</a>
+            <!-- <a href="#menu"
+                class="block py-2 px-4 text-gray-800 dark:text-gray-200 hover:bg-yellow-100 dark:hover:bg-gray-700">Menu</a> -->
+            <a href="#komentar"
+                class="block py-2 px-4 text-gray-800 dark:text-gray-200 hover:bg-yellow-100 dark:hover:bg-gray-700">Testimoni</a>
+            <a href="#gallery"
+                class="block py-2 px-4 text-gray-800 dark:text-gray-200 hover:bg-yellow-100 dark:hover:bg-gray-700">Galeri</a>
+            <a href="#booking"
+                class="block py-2 px-4 text-gray-800 dark:text-gray-200 hover:bg-yellow-100 dark:hover:bg-gray-700">Pemesanan</a>
+            <a href="#footer"
+                class="block py-2 px-4 text-gray-800 dark:text-gray-200 hover:bg-yellow-100 dark:hover:bg-gray-700">Contact</a>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+    <main>
+        <section id="hero"
+            class="bg-yellow-50 min-h-screen pt-30 pb-8 px-4 mx-auto md:px-20 flex flex-col-reverse md:flex-row items-center justify-between relative overflow-hidden">
+            <!-- Left content -->
+            <div class="text-center md:text-left md:w-1/2 space-y-6 z-10">
+                <div class="space-y-4">
+                    <h1 class="text-2xl md:text-5xl sm:text-2xl font-bold text-gray-800 leading-tight">
+                        Selamat Datang di <br>
+                        <span class="text-yellow-600 block md:inline">Dapur Melya</span>
+                    </h1>
+                    <p class="text-gray-600 text-sm md:text-xl">Nikmati masakan rumahan khas Indonesia yang
+                        lezat,
+                        murah, dan bikin nagih!</p>
+                </div>
+
+                <!-- Highlight features in a row -->
+                <div class="flex flex-wrap justify-center md:justify-start gap-4 text-sm">
+                    <div class="flex items-center">
+                        <span class="bg-yellow-100 text-yellow-800 p-1 rounded-full mr-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                        </span>
+                        <span>100% Bahan Segar</span>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="bg-yellow-100 text-yellow-800 p-1 rounded-full mr-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </span>
+                        <span>Cepat Saji</span>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="bg-yellow-100 text-yellow-800 p-1 rounded-full mr-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </span>
+                        <span>Harga Terjangkau</span>
+                    </div>
+                </div>
+
+                <!-- Call to action buttons with improved styling -->
+                <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center md:justify-start">
+                    <a href="#menu"
+                        class="bg-yellow-600 text-white px-8 py-3.5 rounded-xl hover:bg-yellow-700 transition duration-300 font-medium text-center shadow-md hover:shadow-lg flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                        </svg>
+                        Lihat Menu
+                    </a>
+                    <a href="https://wa.me/6287865335225?text=Hai,,%20apa%20aja%20yang%20tersedia" target="_blank"
+                        class="text-yellow-600 border-2 border-yellow-600 px-8 py-3.5 rounded-xl hover:bg-yellow-100 transition duration-300 font-medium text-center flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                        </svg>
+                        Pesan Sekarang
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right content with image and decorative elements -->
+            <div class="md:w-1/2 mb-10 md:mb-0 z-10">
+                <div class="relative">
+                    <!-- Main image with improved shadow and border -->
+                    <img src="image/logo.jpg" alt="Makanan Andalan Warung"
+                        class="w-full max-w-md mx-auto rounded-2xl shadow-xl object-cover">
+                </div>
+            </div>
+        </section>
+        <!-- About -->
+        <!-- <section id="about" class="py-16 bg-white">
+            <div class="container mx-auto px-4 md:px-20">
+                <div class="relative mb-12 text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 inline-block">Tentang Kami</h2>
+                    <div class="h-1 w-20 bg-yellow-500 mx-auto mt-3"></div>
+                    <div
+                        class="absolute -top-6 left-1/2 transform -translate-x-1/2 text-yellow-200 opacity-30 text-7xl font-serif">
+                        "
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-2/5 w-full">
+                        <div class="relative">
+                            <div class="rounded-lg overflow-hidden shadow-lg">
+                                <img src="image/banner.jpg" alt="Suasana Warung Rasa Nikmat"
+                                    class="w-full h-auto object-cover">
+                            </div>
+                            <div
+                                class="absolute -bottom-4 -right-4 h-24 w-24 bg-yellow-50 rounded-lg shadow-md hidden md:block">
+                            </div>
+                            <div
+                                class="absolute -bottom-2 -right-2 h-16 w-16 bg-yellow-100 rounded-lg shadow-md hidden md:block">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-3/5 w-full">
+                        <h3 class="text-2xl font-semibold text-yellow-600 mb-4">Warung Rasa Nikmat</h3>
+                        <p class="text-gray-700 mb-6 leading-relaxed">
+                            Didirikan pada tahun 2015, Warung Rasa Nikmat hadir untuk memenuhi kerinduan Anda akan cita
+                            rasa masakan rumahan khas Indonesia yang otentik. Setiap hidangan kami dibuat dengan penuh
+                            cinta menggunakan resep turun-temurun dan bahan-bahan segar berkualitas.
+                        </p>
+                        <p class="text-gray-700 mb-6 leading-relaxed">
+                            Kami percaya bahwa makanan enak tidak harus mahal. Itulah mengapa kami berkomitmen untuk
+                            menyajikan hidangan lezat dengan harga yang terjangkau bagi semua kalangan.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                            <div class="flex items-start">
+                                <div class="bg-yellow-100 p-2 rounded-full mr-3 mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-600" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Bahan Berkualitas</h4>
+                                    <p class="text-sm text-gray-600">Selalu segar dan dipilih dengan teliti</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-yellow-100 p-2 rounded-full mr-3 mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-600" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.701 2.701 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18zm-3-9v-2a2 2 0 00-2-2H8a2 2 0 00-2 2v2h12z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Resep Tradisional</h4>
+                                    <p class="text-sm text-gray-600">Diturunkan dari generasi ke generasi</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-yellow-100 p-2 rounded-full mr-3 mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-600" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Layanan Cepat</h4>
+                                    <p class="text-sm text-gray-600">Waktu tunggu minimal, kualitas maksimal</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-yellow-100 p-2 rounded-full mr-3 mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-600" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Suasana Nyaman</h4>
+                                    <p class="text-sm text-gray-600">Tempat bersantap dengan keluarga</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between">
+                            <div class="mb-4 sm:mb-0">
+                                <p class="text-gray-500 italic text-sm">Dengan penuh semangat,</p>
+                                <p class="text-yellow-600 font-script text-lg">Keluarga Warung Rasa Nikmat</p>
+                            </div>
+                            <a href="#menu"
+                                class="bg-transparent hover:bg-yellow-50 text-yellow-600 hover:text-yellow-700 mx-auto px-4 py-2 border border-yellow-600 rounded-lg transition duration-300 inline-flex items-center">
+                                <span>Jelajahi Menu Kami</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <!-- Menu Section -->
+        <section id="menu" class="py-16 bg-yellow-50">
+            <div class="container mx-auto px-2 md:px-20">
+                <!-- Section header -->
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Menu Kami</h2>
+                    <div class="h-1 w-20 bg-yellow-500 mx-auto mt-3 mb-6"></div>
+                </div>
+
+                <!-- Menu items grid -->
+                <div class="menu grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
+                    <!-- Menu Item 1 -->
+                    <div class="item bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition group"
+                        data-category="main" data-name="Mie bakso" data-price="12000">
+                        <!-- Image container with overflow hidden for zoom effect -->
+                        <div class="relative overflow-hidden h-48">
+                            <img src="./image/menu/mie-setanbakso.jpg" alt="Mie bakso"
+                                class="w-full h-full object-cover transition duration-300 group-hover:scale-110">
+                        </div>
+
+                        <!-- Content -->
+                        <div class="p-4">
+                            <div class="flex flex-col justify-between items-center mb-2">
+                                <h3 class="text-gray-800 font-bold text-sm md:text-lg mb-1">Mie bakso</h3>
+                                <p class="text-yellow-600">Rp12.000</p>
+                            </div>
+
+                            <button
+                                class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-2 rounded-lg transition flex items-center justify-center"
+                                onclick="addToCart('Mie bakso', 12000)">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                </svg>
+                                Keranjang
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Menu Item 2 -->
+                    <div class="item bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition group"
+                        data-category="main" data-name="Mie bakso ceker" data-price="17000">
+                        <!-- Image container with overflow hidden for zoom effect -->
+                        <div class="relative overflow-hidden h-48">
+                            <img src="./image/menu/mi-setanceker.jpg" alt="Mie bakso ceker"
+                                class="w-full h-full object-cover transition duration-300 group-hover:scale-110">
+                        </div>
+
+                        <!-- Content -->
+                        <div class="p-4">
+                            <div class="flex flex-col justify-between items-center mb-2">
+                                <h3 class="text-gray-800 font-bold text-sm md:text-lg mb-1">Mie bakso ceker</h3>
+                                <p class="text-yellow-600">Rp17.000</p>
+                            </div>
+
+                            <button
+                                class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-2 rounded-lg transition flex items-center justify-center"
+                                onclick="addToCart('Mie bakso ceker', 17000)">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                </svg>
+                                Keranjang
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Menu Item 3 -->
+                    <div class="item bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition group"
+                        data-category="main" data-name="Mie bakso ceker + telur" data-price="20000">
+                        <!-- Image container with overflow hidden for zoom effect -->
+                        <div class="relative overflow-hidden h-48">
+                            <img src="./image/menu/mi-setankomplit.jpg" alt="Mie bakso ceker + telur"
+                                class="w-full h-full object-cover transition duration-300 group-hover:scale-110">
+                        </div>
+
+                        <!-- Content -->
+                        <div class="p-4">
+                            <div class="flex flex-col justify-between items-center mb-2">
+                                <h3 class="text-gray-800 font-bold text-sm md:text-lg mb-1">Mie bakso ceker + telur</h3>
+                                <p class="text-yellow-600">Rp20.000</p>
+                            </div>
+
+                            <button
+                                class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-2 rounded-lg transition flex items-center justify-center"
+                                onclick="addToCart('Mie bakso ceker + telur', 20000)">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                </svg>
+                                Keranjang
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Menu Item 4 -->
+                    <div class="item bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition group"
+                        data-category="main" data-name="Mie ayam geprek" data-price="22000">
+                        <!-- Image container with overflow hidden for zoom effect -->
+                        <div class="relative overflow-hidden h-48">
+                            <img src="./image/menu/mi-setangeprekceker.jpg" alt="Mie ayam geprek"
+                                class="w-full h-full object-cover transition duration-300 group-hover:scale-110">
+                        </div>
+
+                        <!-- Content -->
+                        <div class="p-4">
+                            <div class="flex flex-col justify-between items-center mb-2">
+                                <h3 class="text-gray-800 font-bold text-sm md:text-lg mb-1">Mie ayam geprek</h3>
+                                <p class="text-yellow-600">Rp22.000</p>
+                            </div>
+
+                            <button
+                                class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-2 rounded-lg transition flex items-center justify-center"
+                                onclick="addToCart('Mie ayam geprek', 22000)">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                </svg>
+                                Keranjang
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Menu Item 5 -->
+                    <div class="item bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition group"
+                        data-category="main" data-name="Mie ayam geprek + ceker" data-price="25000">
+                        <!-- Image container with overflow hidden for zoom effect -->
+                        <div class="relative overflow-hidden h-48">
+                            <img src="./image/menu/mi-setangeprekceker.jpg" alt="Mie ayam geprek + ceker"
+                                class="w-full h-full object-cover transition duration-300 group-hover:scale-110">
+                        </div>
+
+                        <!-- Content -->
+                        <div class="p-4">
+                            <div class="flex flex-col justify-between items-center mb-2">
+                                <h3 class="text-gray-800 font-bold text-sm md:text-lg mb-1">Mie ayam geprek + ceker</h3>
+                                <p class="text-yellow-600">Rp25.000</p>
+                            </div>
+
+                            <button
+                                class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-2 rounded-lg transition flex items-center justify-center"
+                                onclick="addToCart('Mie ayam geprek + ceker', 25000)">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                </svg>
+                                Keranjang
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Menu Item 6 -->
+                    <div class="item bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition group"
+                        data-category="main" data-name="Nasi ayam geprek" data-price="12000">
+                        <!-- Image container with overflow hidden for zoom effect -->
+                        <div class="relative overflow-hidden h-48">
+                            <img src="./image/menu/nasi-ayamgeprek.jpg" alt="Nasi ayam geprek"
+                                class="w-full h-full object-cover transition duration-300 group-hover:scale-110">
+                        </div>
+
+                        <!-- Content -->
+                        <div class="p-4">
+                            <div class="flex flex-col justify-between items-center mb-2">
+                                <h3 class="text-gray-800 font-bold text-sm md:text-lg mb-1">Nasi ayam geprek</h3>
+                                <p class="text-yellow-600">Rp12.000</p>
+                            </div>
+
+                            <button
+                                class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-2 rounded-lg transition flex items-center justify-center"
+                                onclick="addToCart('Nasi ayam geprek', 12000)">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                </svg>
+                                Keranjang
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Menu Item 7 -->
+                    <div class="item bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition group"
+                        data-category="main" data-name="Nasi ayam geprek komplit" data-price="20000">
+                        <!-- Image container with overflow hidden for zoom effect -->
+                        <div class="relative overflow-hidden h-48">
+                            <img src="./image/menu/nasi-ayamgeprektelorcilok.jpg" alt="Nasi ayam geprek komplit"
+                                class="w-full h-full object-cover transition duration-300 group-hover:scale-110">
+                        </div>
+
+                        <!-- Content -->
+                        <div class="p-4">
+                            <div class="flex flex-col justify-between items-center mb-2">
+                                <h3 class="text-gray-800 font-bold text-sm md:text-lg mb-1">Nasi ayam geprek komplit
+                                </h3>
+                                <p class="text-yellow-600">Rp20.000</p>
+                            </div>
+
+                            <button
+                                class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-2 rounded-lg transition flex items-center justify-center"
+                                onclick="addToCart('Nasi ayam geprek komplit', 20000)">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                </svg>
+                                Keranjang
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Menu Item 8 -->
+                    <div class="item bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition group"
+                        data-category="main" data-name="Ceker mercon" data-price="12000">
+                        <!-- Image container with overflow hidden for zoom effect -->
+                        <div class="relative overflow-hidden h-48">
+                            <img src="./image/menu/ceker-mercon.jpg" alt="Ceker mercon"
+                                class="w-full h-full object-cover transition duration-300 group-hover:scale-110">
+                        </div>
+
+                        <!-- Content -->
+                        <div class="p-4">
+                            <div class="flex flex-col justify-between items-center mb-2">
+                                <h3 class="text-gray-800 font-bold text-sm md:text-lg mb-1">Ceker mercon
+                                </h3>
+                                <p class="text-yellow-600">Rp12.000</p>
+                            </div>
+
+                            <button
+                                class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-2 rounded-lg transition flex items-center justify-center"
+                                onclick="addToCart('Ceker mercon', 12000)">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                </svg>
+                                Keranjang
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Simple cart icon (fixed position) -->
+                <div class="fixed bottom-6 right-6 bg-yellow-600 text-white p-3 rounded-full shadow-lg cursor-pointer hover:bg-yellow-700 transition z-50"
+                    onclick="showCart()">
+                    <div class="relative">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                        <div id="cart-count"
+                            class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                            0</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- komentar -->
+        <section id="komentar"
+            class="bg-yellow-50 min-h-screen flex items-center justify-center px-4 py-8 overflow-hidden relative">
+
+            <div class="container w-full md:w-1/2 mx-auto px-4">
+                <div class="text-center">
+                    <h2 class="text-4xl font-bold text-black mb-4 text-center">Testimoni</h2>
+                    <div class="inline-block mx-auto">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="120" height="24" viewBox="0 0 120 24" fill="none"
+                            stroke="currentColor" class="text-black mb-4">
+                            <path d="M0 12 H40" stroke-width="1" stroke-linecap="round"></path>
+                            <path d="M80 12 H120" stroke-width="1" stroke-linecap="round"></path>
+                            <circle cx="60" cy="12" r="4" stroke-width="1" fill="none"></circle>
+                        </svg>
+                    </div>
+                </div>
+                <form id="commentForm" class="space-y-4">
+                    <input type="text" id="nama" placeholder="Nama" required
+                        class="w-full px-4 py-2 border border-yellow-600 rounded-lg" />
+                    <textarea id="isi" placeholder="Bagikan Kesanmu..." required rows="3"
+                        class="w-full px-4 py-2 border border-yellow-600 rounded-lg"></textarea>
+                    <button type="submit"
+                        class="bg-yellow-600 text-white font-semibold px-6 py-2 rounded-lg hover:bg-yellow-800 transition w-full">
+                        Kirim Komentar
+                    </button>
+                </form>
+
+                <h3 class="text-xl font-semibold text-black my-4 border-b border-pink-200">💬 Komentar Terbaru:
+                </h3>
+
+                <div id="listKomentar"
+                    class="mt-4 space-y-4 max-h-96 overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-pink-400 scrollbar-track-pink-100 rounded-lg">
+                    <!-- Komentar akan muncul di sini -->
+                </div>
+                <p class="text-xs text-gray-500 italic mt-1 text-center">
+                    Scroll untuk melihat lebih banyak ucapan...
+                </p>
+            </div>
+
+        </section>
+        <!-- gallery -->
+        <section id="gallery" class="py-16 bg-white">
+            <div class="container mx-auto px-4 md:px-20">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Galeri</h2>
+                    <div class="h-1 w-20 bg-yellow-500 mx-auto mt-3"></div>
+                    <!-- <p class="text-gray-600 max-w-2xl mx-auto">Lihat beberapa momen indah di Warung Rasa Nikmat.</p> -->
+                </div>
+
+                <!-- Gallery grid -->
+                <div id="custom-controls-gallery" class="relative w-full" data-carousel="slide">
+                    <!-- Carousel wrapper -->
+                    <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+                        <!-- Item 1 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg"
+                                class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                alt="">
+                        </div>
+                        <!-- Item 2 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+                            <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg"
+                                class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                alt="">
+                        </div>
+                        <!-- Item 3 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg"
+                                class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                alt="">
+                        </div>
+                        <!-- Item 4 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg"
+                                class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                alt="">
+                        </div>
+                        <!-- Item 5 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg"
+                                class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                alt="">
+                        </div>
+                    </div>
+                    <div class="flex justify-center items-center pt-4">
+                        <button type="button"
+                            class="flex justify-center items-center me-4 h-full cursor-pointer group focus:outline-none"
+                            data-carousel-prev>
+                            <span
+                                class="text-gray-400 hover:text-gray-900 dark:hover:text-white group-focus:text-gray-900 dark:group-focus:text-white">
+                                <svg class="rtl:rotate-180 w-5 h-5" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="M13 5H1m0 0 4 4M1 5l4-4" />
+                                </svg>
+                                <span class="sr-only">Previous</span>
+                            </span>
+                        </button>
+                        <button type="button"
+                            class="flex justify-center items-center h-full cursor-pointer group focus:outline-none"
+                            data-carousel-next>
+                            <span
+                                class="text-gray-400 hover:text-gray-900 dark:hover:text-white group-focus:text-gray-900 dark:group-focus:text-white">
+                                <svg class="rtl:rotate-180 w-5 h-5" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                                </svg>
+                                <span class="sr-only">Next</span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- pemesanan -->
+        <section id="booking" class="bg-yellow-600 py-16 px-4">
+            <div class="max-w-4xl mx-auto">
+                <!-- Judul -->
+                <div class="text-center text-white mb-10">
+                    <h2 class="text-3xl md:text-4xl font-bold">
+                        Pesan kebutuhanmu
+                    </h2>
+                    <p class="text-base md:text-lg mt-2">Punya acara? Beritahu kami kebutuhanmu</p>
+                </div>
+
+                <!-- Formulir -->
+                <form id="bookingForm" class="space-y-6 text-white">
+                    <div>
+                        <label for="exampleInputNama" class="block mb-1 font-medium">Nama</label>
+                        <input type="text" id="exampleInputNama" placeholder="Nama Lengkap"
+                            class="w-full px-4 py-3 rounded-lg bg-white/90 text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-300 shadow-sm" />
+                    </div>
+
+                    <div>
+                        <label for="exampleInputAcara" class="block mb-1 font-medium">Acara</label>
+                        <input type="text" id="exampleInputAcara" placeholder="Contoh: Arisan, Syukuran"
+                            class="w-full px-4 py-3 rounded-lg bg-white/90 text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-300 shadow-sm" />
+                    </div>
+
+                    <div>
+                        <label for="exampleInputAlamat" class="block mb-1 font-medium">Alamat</label>
+                        <input type="text" id="exampleInputAlamat" placeholder="Contoh: Jl. Melati No.12, Mataram"
+                            class="w-full px-4 py-3 rounded-lg bg-white/90 text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-300 shadow-sm" />
+                        <p class="text-sm mt-1 text-yellow-100 italic">
+                            Disarankan untuk menyalin dan menempelkan alamat langsung dari Google Maps agar lebih
+                            akurat.
+                        </p>
+                    </div>
+
+                    <!-- Tombol Kirim -->
+                    <div class="text-center">
+                        <button type="button" onclick="sendWhatsAppMessage()"
+                            class="bg-white text-yellow-700 font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-yellow-100 transition duration-300">
+                            Kirim
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <!-- footer -->
+        <section id="footer" class="bg-gray-900 text-gray-200 pt-12 pb-6">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+
+                    <!-- Brand & Deskripsi -->
+                    <div>
+                        <h3 class="text-xl font-bold text-yellow-500">Dapur Melya</h3>
+                        <img src="./image/logo.jpg" alt="logo" class="w-24 h-24 mt-2 mb-4">
+                    </div>
+
+                    <!-- Menu Navigasi -->
+                    <div>
+                        <h4 class="text-lg font-semibold text-yellow-500">Menu</h4>
+                        <ul class="mt-3 space-y-2 text-sm">
+                            <li><a href="#hero" class="hover:text-white transition">Home</a></li>
+                            <li><a href="#menu" class="hover:text-white transition">Menu</a></li>
+                            <li><a href="#komentar" class="hover:text-white transition">Testimoni</a></li>
+                            <li><a href="#gallery" class="hover:text-white transition">Galeri</a></li>
+                            <li><a href="#booking" class="hover:text-white transition">Pemesanan</a></li>
+                            <li><a href="#footer" class="hover:text-white transition">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Kontak -->
+                    <div>
+                        <h4 class="text-lg font-semibold text-yellow-500">Kontak</h4>
+                        <ul class="mt-3 text-sm space-y-2">
+                            <li>📍 Jln. Tgkh Zainuddin Abdul Majid, Pancor. Belakang SB Elektronik</li>
+                            <li>📞 +6287865335225</li>
+                        </ul>
+                    </div>
+
+                    <!-- Ikuti Kami -->
+                    <div>
+                        <h4 class="text-lg font-semibold text-yellow-500">Ikuti Kami</h4>
+                        <div class="flex items-center gap-4 mt-3">
+                            <!-- <a href="#" class="hover:text-yellow-400 transition">
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                    <path
+                                        d="M22.46 6c-.77.35-1.6.59-2.46.69a4.3 4.3 0 001.89-2.37 8.52 8.52 0 01-2.71 1.04A4.28 4.28 0 0016 4c-2.37 0-4.29 1.94-4.29 4.33 0 .34.03.66.1.97A12.13 12.13 0 013 5.1a4.37 4.37 0 001.33 5.77 4.22 4.22 0 01-1.94-.54v.05c0 2.1 1.48 3.85 3.44 4.25a4.18 4.18 0 01-1.93.07 4.3 4.3 0 004 2.99A8.6 8.6 0 012 19.55 12.16 12.16 0 008.29 21c7.55 0 11.68-6.37 11.68-11.9 0-.18 0-.36-.01-.53A8.42 8.42 0 0022.46 6z" />
+                                </svg>
+                            </a> -->
+                            <a href="https://www.facebook.com/melhya.melhya.56"
+                                class="hover:text-blue-400 transition duration-300 flex flex-row" target="_blank">
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2.04c-5.5 0-9.96 4.46-9.96 9.96 0 4.41 3.6 8.08 8 8.91v-6.3H8.09v-2.6H10v-2c0-2 1.19-3.12 3.02-3.12.88 0 1.79.16 1.79.16v1.98h-1.01c-1 0-1.3.63-1.3 1.27v1.7h2.21l-.35 2.6H12v6.3c4.4-.83 7.99-4.5 7.99-8.91 0-5.5-4.46-9.96-9.99-9.96z" />
+                                </svg>
+                                <span class="ml-2">Facebook</span>
+                            </a>
+                            <!-- <a href="#" class="hover:text-yellow-400 transition">
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2.2C6.37 2.2 1.8 6.77 1.8 12.4c0 4.49 3.06 8.26 7.25 9.46.53.1.73-.23.73-.5 0-.25-.01-1.1-.01-2-.97.2-1.18-.24-1.25-.46-.12-.31-.63-1.16-1.08-1.4-.37-.2-.9-.7-.01-.72.84-.02 1.44.78 1.63 1.1.96 1.62 2.5 1.15 3.12.88.1-.7.38-1.15.69-1.42-2.44-.28-5-1.22-5-5.43 0-1.2.42-2.18 1.1-2.95-.11-.27-.48-1.35.1-2.8 0 0 .91-.29 2.99 1.13a10.5 10.5 0 015.45 0c2.08-1.42 2.99-1.13 2.99-1.13.58 1.45.21 2.53.1 2.8.69.77 1.1 1.75 1.1 2.95 0 4.22-2.57 5.15-5.01 5.42.39.34.74 1.02.74 2.06 0 1.49-.01 2.69-.01 3.06 0 .28.2.61.74.5 4.18-1.2 7.24-4.97 7.24-9.46C22.2 6.77 17.63 2.2 12 2.2z" />
+                                </svg>
+                            </a> -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Garis & copyright -->
+                <div class="border-t border-gray-700 mt-10 pt-6 text-center text-sm text-gray-500">
+                    © 2025 DapurMelya.
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- sweetalert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.17.2/dist/sweetalert2.all.min.js"></script>
+    <script src="./js/menu-mobile.js"></script>
+    <script src="./js/filter.js"></script>
+    <script src="./js/pesankewa.js"></script>
+    <!-- komentar -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+        import {
+            getDatabase,
+            ref,
+            push,
+            onChildAdded,
+            remove
+        } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-database.js";
+        const firebaseConfig = {
+            apiKey: "AIzaSyBjjQ9Pzfp88hym99GjDWwdbMD1T2QU03M",
+            authDomain: "tokoku-dbb5c.firebaseapp.com",
+            databaseURL: "https://tokoku-dbb5c-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "tokoku-dbb5c",
+            storageBucket: "tokoku-dbb5c.firebasestorage.app",
+            messagingSenderId: "846265687237",
+            appId: "1:846265687237:web:f1c6c5970d2598e79364ac"
+        };
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+        const komentarRef = ref(db, "komentar");
+        const form = document.getElementById("commentForm");
+        const listKomentar = document.getElementById("listKomentar");
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const nama = document.getElementById("nama").value.trim();
+            const isi = document.getElementById("isi").value.trim();
+            if (nama && isi) {
+                const waktu = new Date().toISOString();
+                push(komentarRef, { nama, isi, waktu });
+                form.reset();
+            }
+        });
+        onChildAdded(komentarRef, (data) => {
+            const { nama, isi, waktu } = data.val();
+            const key = data.key;
+            const tgl = new Date(waktu);
+            const formatter = new Intl.DateTimeFormat("id-ID", {
+                dateStyle: "medium",
+                timeStyle: "short"
+            });
+            const waktuFormatted = formatter.format(tgl);
+            const div = document.createElement("div");
+            div.className = "flex gap-3 p-4 bg-white relative";
+            const avatar = nama.charAt(0).toUpperCase(); // ambil huruf pertama
+            div.innerHTML = `
+                        <div class="flex-shrink-0 w-10 h-10 bg-pink-500 text-white rounded-full flex items-center justify-center font-bold text-lg shadow">
+                        ${avatar}
+                        </div>
+                        <div class="flex-1">
+                        <div class="flex justify-between items-center mb-1">
+                            <h4 class="font-semibold text-black">${nama}</h4>
+                            <span class="text-sm text-gray-400">${waktuFormatted}</span>
+                        </div>
+                        <p class="text-gray-700">${isi}</p>
+                        </div>
+                        <button class="absolute bottom-2 right-2 text-red-400 hover:text-red-600 text-sm" title="Hapus" data-key="${key}">🗑️</button>
+                    `;
+            // Event hapus dengan SweetAlert
+            div.querySelector("button").addEventListener("click", () => {
+                const komentarRefKey = ref(db, `komentar/${key}`);
+                Swal.fire({
+                    title: "Hapus komentar?",
+                    text: "Komentar ini akan dihapus secara permanen.",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#e11d48",
+                    cancelButtonColor: "#9ca3af",
+                    confirmButtonText: "Ya, hapus!",
+                    cancelButtonText: "Batal"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        remove(komentarRefKey)
+                            .then(() => {
+                                Swal.fire("Dihapus!", "Komentar telah dihapus.", "success");
+                            })
+                            .catch(() => {
+                                Swal.fire({
+                                    icon: "error",
+                                    title: "Oops...",
+                                    text: "Terjadi kesalahan saat menghapus komentar.",
+                                });
+                            });
+                    }
+                });
+            });
+            listKomentar.prepend(div);
+        });
+    </script>
+
+</body>
+
+</html>

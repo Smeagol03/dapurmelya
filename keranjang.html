@@ -1,0 +1,310 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Tokoku - Warung Rasa Nikmat">
+    <meta property="og:description"
+        content="Nikmati masakan rumahan khas Indonesia yang lezat, murah, dan bikin nagih!">
+    <meta property="og:image" content="https://tokoizza.netlify.app/image/banner.jpg">
+    <meta property="og:url" content="https://tokoizza.netlify.app">
+
+    <title>Tokoku</title>
+    <link rel="icon" href="image/shopping-cart.png">
+    <!-- TailwindCss -->
+    <link rel="stylesheet" href="./src/output.css">
+    <!-- CustomCss -->
+    <link rel="stylesheet" href="./style.css">
+    <!-- FlowBite -->
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    <!-- Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="bg-yellow-100 dark:bg-gray-900 fixed w-full z-50 top-0 border-b border-gray-200 dark:border-gray-600">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                        class="size-8 items-center fill-yellow-600 dark:fill-yellow-500 mr-2">
+                        <path fill-rule="evenodd"
+                            d="M7.5 6v.75H5.513c-.96 0-1.764.724-1.865 1.679l-1.263 12A1.875 1.875 0 0 0 4.25 22.5h15.5a1.875 1.875 0 0 0 1.865-2.071l-1.263-12a1.875 1.875 0 0 0-1.865-1.679H16.5V6a4.5 4.5 0 1 0-9 0ZM12 3a3 3 0 0 0-3 3v.75h6V6a3 3 0 0 0-3-3Zm-3 8.25a3 3 0 1 0 6 0v-.75a.75.75 0 0 1 1.5 0v.75a4.5 4.5 0 1 1-9 0v-.75a.75.75 0 0 1 1.5 0v.75Z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Tokoku</span>
+                </a>
+
+                <!-- Navigation Links -->
+                <div class="hidden md:flex space-x-6 rtl:space-x-reverse">
+                    <a href="index.html"
+                        class="text-gray-800 dark:text-gray-200 hover:text-yellow-600 dark:hover:text-yellow-400 transition">Home</a>
+                    <a href="#footer"
+                        class="text-gray-800 dark:text-gray-200 hover:text-yellow-600 dark:hover:text-yellow-400 transition">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden text-gray-800 dark:text-gray-200 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden">
+                <a href="index.html"
+                    class="block py-2 px-4 text-gray-800 dark:text-gray-200 hover:bg-yellow-100 dark:hover:bg-gray-700">Home</a>
+                <a href="#footer"
+                    class="block py-2 px-4 text-gray-800 dark:text-gray-200 hover:bg-yellow-100 dark:hover:bg-gray-700">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <!-- end navbar -->
+    <main>
+        <!-- Tabel Keranjang -->
+        <section class="bg-gray-50 text-gray-800 py-20 min-h-screen">
+            <div class="max-w-4xl mx-auto py-10 px-4">
+                <h1 class="text-3xl font-bold mb-6 text-center">Keranjang Belanja</h1>
+
+                <!-- Tabel Keranjang -->
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white border border-gray-200 rounded-xl shadow">
+                        <thead class="bg-gray-100 text-gray-700">
+                            <tr>
+                                <th class="px-4 py-2 text-left">No.</th>
+                                <th class="px-4 py-2 text-left">Nama Item</th>
+                                <th class="px-4 py-2 text-left">Harga Satuan</th>
+                                <th class="px-4 py-2 text-left">Jumlah</th>
+                                <th class="px-4 py-2 text-left">Subtotal</th>
+                                <th class="px-4 py-2 text-left">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cart-table-body" class="text-gray-800">
+                            <!-- Akan diisi via JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Total keseluruhan (opsional jika tidak ingin dalam tabel) -->
+                <div id="cart-total" class="text-right text-xl font-semibold mt-6"></div>
+                <!-- Form Nama dan Alamat -->
+                <div class="mt-6">
+                    <form id="customer-info-form" class="space-y-4">
+                        <div>
+                            <label for="customer-name" class="block text-sm font-medium text-gray-700">Nama</label>
+                            <input type="text" id="customer-name" name="customer-name" required
+                                class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm">
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-bold text-amber-800 mb-4">Metode Pesanan</h2>
+
+                            <div class="space-y-3">
+                                <!-- Ambil Sendiri -->
+                                <div
+                                    class="flex items-center gap-3 p-3 bg-white rounded-lg hover:bg-yellow-50 transition-colors cursor-pointer shadow-sm">
+                                    <input type="radio" id="pickup-option" name="delivery-method" value="pickup"
+                                        class="w-5 h-5 text-yellow-500 focus:ring-yellow-400" />
+                                    <label for="pickup-option" class="flex flex-1 cursor-pointer">
+                                        <div>
+                                            <span class="font-medium text-gray-800">Ambil Sendiri</span>
+                                            <p class="text-sm text-gray-500 mt-1">Pesanan Anda akan siap di toko kami
+                                            </p>
+                                        </div>
+                                    </label>
+                                </div>
+
+                                <!-- Antarkan -->
+                                <div
+                                    class="flex items-center gap-3 p-3 bg-white rounded-lg hover:bg-yellow-50 transition-colors cursor-pointer shadow-sm">
+                                    <input type="radio" id="delivery-option" name="delivery-method" value="delivery"
+                                        class="w-5 h-5 text-yellow-500 focus:ring-yellow-400" />
+                                    <label for="delivery-option" class="flex flex-1 cursor-pointer">
+                                        <div>
+                                            <span class="font-medium text-gray-800">Antarkan</span>
+                                            <p class="text-sm text-gray-500 mt-1">Pesanan Anda akan dikirim ke alamat
+                                                Anda</p>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Form Alamat Pengiriman (disembunyikan dulu) -->
+                            <div id="address-form"
+                                class="mt-5 p-4 bg-white border-2 border-yellow-400 shadow-sm hidden transition-all duration-300 ease-in-out">
+                                <label for="customer-address" class="block text-sm font-medium text-gray-800 mb-2">
+                                    Alamat Pengiriman
+                                </label>
+                                <textarea id="customer-address" name="customer-address" rows="3"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"
+                                    placeholder="Masukkan alamat lengkap Anda..."></textarea>
+                                <div class="mt-2 flex items-center text-sm text-gray-600">
+                                    <svg class="w-4 h-4 mr-1 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                    <span class="italic">*rekomendasi salin alamat dari maps</span>
+                                </div>
+                                <div class="mt-4">
+                                    <button type="button" onclick="shareLocation()"
+                                        class="bg-blue-600 hover:bg-blue-700 text-white font-medium px-4 py-2 rounded-lg shadow-md transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                                        Pilih Titik Pengantaran
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <script>
+                            const pickupOption = document.getElementById('pickup-option');
+                            const deliveryOption = document.getElementById('delivery-option');
+                            const addressForm = document.getElementById('address-form');
+
+                            pickupOption.addEventListener('change', function () {
+                                if (pickupOption.checked) {
+                                    addressForm.classList.add('hidden');
+                                }
+                            });
+
+                            deliveryOption.addEventListener('change', function () {
+                                if (deliveryOption.checked) {
+                                    addressForm.classList.remove('hidden');
+                                }
+                            });
+                        </script>
+
+                        <script>
+                            function shareLocation() {
+                                if (navigator.geolocation) {
+                                    Swal.fire({
+                                        title: 'Mohon Tunggu',
+                                        text: 'Sedang mendapatkan lokasi Anda...',
+                                        allowOutsideClick: false,
+                                        didOpen: () => {
+                                            Swal.showLoading();
+                                        }
+                                    });
+                                    navigator.geolocation.getCurrentPosition(function (position) {
+                                        const latitude = position.coords.latitude;
+                                        const longitude = position.coords.longitude;
+                                        const googleMapsUrl = `https://www.google.com/maps?q=${latitude},${longitude}`;
+                                        Swal.fire({
+                                            title: 'Lokasi Anda',
+                                            html: `<a href="${googleMapsUrl}" target="_blank" class="text-blue-500 underline">Klik di sini untuk menyalin lokasi di Google Maps</a>`,
+                                            icon: 'info'
+                                        });
+                                    }, function () {
+                                        Swal.fire('Error', 'Gagal mendapatkan lokasi Anda.', 'error');
+                                    });
+                                } else {
+                                    Swal.fire('Error', 'Geolocation tidak didukung oleh browser Anda.', 'error');
+                                }
+                            }
+                        </script>
+                    </form>
+                </div>
+                <!-- Tombol aksi -->
+                <div class="flex flex-col sm:flex-row justify-between gap-4 mt-8 w-full">
+                    <button onclick="clearCart()"
+                        class="bg-red-600 hover:bg-red-700 text-white font-medium px-6 py-3 rounded-lg shadow-md transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50 flex items-center justify-center w-full sm:w-auto">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                        </svg>
+                        Hapus Keranjang
+                    </button>
+                    <button onclick="sendCartToWhatsApp()"
+                        class="bg-green-600 hover:bg-green-700 text-white font-medium px-6 py-3 rounded-lg shadow-md transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 flex items-center justify-center w-full sm:w-auto">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                        Pesan Sekarang
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- footer -->
+        <section id="footer" class="bg-gray-900 text-gray-200 pt-12 pb-6">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+
+                    <!-- Brand & Deskripsi -->
+                    <div>
+                        <h3 class="text-xl font-bold text-yellow-500">Warung Rasa Nikmat</h3>
+                        <p class="mt-3 text-sm text-gray-400">
+                            Masakan rumahan khas Indonesia yang lezat, murah, dan bikin nagih!
+                        </p>
+                    </div>
+
+                    <!-- Kontak -->
+                    <div>
+                        <h4 class="text-lg font-semibold text-yellow-500">Kontak</h4>
+                        <ul class="mt-3 text-sm space-y-2">
+                            <li>📍 Jl. Contoh Alamat No.12</li>
+                            <li>📞 +62 812-XXXX-XXXX</li>
+                            <li>✉️ warungrasanikmat@email.com</li>
+                        </ul>
+                    </div>
+                    <!-- menu -->
+                    <div>
+                        <h4 class="text-lg font-semibold text-yellow-500">Menu</h4>
+                        <ul class="mt-3 space-y-2 text-sm">
+                            <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+                            <li><a href="#footer" class="hover:text-white transition">Contact</a></li>
+                        </ul>
+                    </div>
+                    <!-- Ikuti Kami -->
+                    <div>
+                        <h4 class="text-lg font-semibold text-yellow-500">Ikuti Kami</h4>
+                        <div class="flex items-center gap-4 mt-3">
+                            <a href="#" class="hover:text-yellow-400 transition">
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                    <path
+                                        d="M22.46 6c-.77.35-1.6.59-2.46.69a4.3 4.3 0 001.89-2.37 8.52 8.52 0 01-2.71 1.04A4.28 4.28 0 0016 4c-2.37 0-4.29 1.94-4.29 4.33 0 .34.03.66.1.97A12.13 12.13 0 013 5.1a4.37 4.37 0 001.33 5.77 4.22 4.22 0 01-1.94-.54v.05c0 2.1 1.48 3.85 3.44 4.25a4.18 4.18 0 01-1.93.07 4.3 4.3 0 004 2.99A8.6 8.6 0 012 19.55 12.16 12.16 0 008.29 21c7.55 0 11.68-6.37 11.68-11.9 0-.18 0-.36-.01-.53A8.42 8.42 0 0022.46 6z" />
+                                </svg>
+                            </a>
+                            <a href="#" class="hover:text-yellow-400 transition">
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2.04c-5.5 0-9.96 4.46-9.96 9.96 0 4.41 3.6 8.08 8 8.91v-6.3H8.09v-2.6H10v-2c0-2 1.19-3.12 3.02-3.12.88 0 1.79.16 1.79.16v1.98h-1.01c-1 0-1.3.63-1.3 1.27v1.7h2.21l-.35 2.6H12v6.3c4.4-.83 7.99-4.5 7.99-8.91 0-5.5-4.46-9.96-9.99-9.96z" />
+                                </svg>
+                            </a>
+                            <a href="#" class="hover:text-yellow-400 transition">
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2.2C6.37 2.2 1.8 6.77 1.8 12.4c0 4.49 3.06 8.26 7.25 9.46.53.1.73-.23.73-.5 0-.25-.01-1.1-.01-2-.97.2-1.18-.24-1.25-.46-.12-.31-.63-1.16-1.08-1.4-.37-.2-.9-.7-.01-.72.84-.02 1.44.78 1.63 1.1.96 1.62 2.5 1.15 3.12.88.1-.7.38-1.15.69-1.42-2.44-.28-5-1.22-5-5.43 0-1.2.42-2.18 1.1-2.95-.11-.27-.48-1.35.1-2.8 0 0 .91-.29 2.99 1.13a10.5 10.5 0 015.45 0c2.08-1.42 2.99-1.13 2.99-1.13.58 1.45.21 2.53.1 2.8.69.77 1.1 1.75 1.1 2.95 0 4.22-2.57 5.15-5.01 5.42.39.34.74 1.02.74 2.06 0 1.49-.01 2.69-.01 3.06 0 .28.2.61.74.5 4.18-1.2 7.24-4.97 7.24-9.46C22.2 6.77 17.63 2.2 12 2.2z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Garis & copyright -->
+                <div class="border-t border-gray-700 mt-10 pt-6 text-center text-sm text-gray-500">
+                    © 2025 Warung Rasa Nikmat. All rights reserved.
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- sweetalert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.17.2/dist/sweetalert2.all.min.js"></script>
+
+    <!-- tabelkeranjang -->
+    <script src="./keranjang/keranjang.js"></script>
+
+</body>
+
+</html>
